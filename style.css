@@ -4,6 +4,7 @@
 
 :root {
   --cell-size: 250px;
+  --mark-size: cal(var(--cell-size) * .9);
 }
 
 body {
@@ -16,12 +17,20 @@ body {
   display: grid;
   justify-content: center;
   align-content: center;
+  justify-items: center;
+  align-items: center;
   grid-template-columns: repeat(3, auto);
 }
 
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
-  background-color: black;
-  border: 1px solid greenyellow;
+  background-color: wheat;
+  border: 1px solid black;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
 }
