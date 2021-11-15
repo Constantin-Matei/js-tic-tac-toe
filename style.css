@@ -27,6 +27,9 @@ body {
   height: var(--cell-size);
   background-color: wheat;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* remove the border from top of the cell */
