@@ -31,6 +31,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 /* remove the border from top of the cell */
@@ -57,9 +58,24 @@ body {
   border-bottom: none;
 }
 
+/* creating the cursor and deactivating it */
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+/* create hoover effect */
+
+.board.x .cell:not(.x):not(.circle):hover::before, 
+.board.x .cell:not(.x):not(.circle):hover::after {
+  background-color:rgb(170, 250, 237)
+}
+
 /* personalize cells x*/
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
   content: '';
   width: calc(var(--mark-size) * .15);
   height: var(--mark-size);
@@ -67,11 +83,13 @@ body {
   position: absolute;
 }
 
-.cell.x::before {
+.cell.x::before, 
+.board.x .cell:not(.x):not(.circle):hover::before {
   transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
 
